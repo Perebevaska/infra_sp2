@@ -9,9 +9,8 @@ COPY requirements.txt /app
 
 # Выполнить установку зависимостей внутри контейнера.
 RUN pip3 install -r /app/requirements.txt --no-cache-dir
+RUN pip3 install --root-user-action=ignore
 
-ARG DEBIAN_FRONTEND=noninteractive
-ARG DEBCONF_NOWARNINGS="yes"
 
 # Сделать директорию /app рабочей директорией.
 WORKDIR /app
