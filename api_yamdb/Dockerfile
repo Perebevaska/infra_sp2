@@ -10,9 +10,8 @@ COPY requirements.txt /app
 # Выполнить установку зависимостей внутри контейнера.
 RUN pip3 install -r /app/requirements.txt --no-cache-dir
 
-# Скопировать содержимое директории /api_yamdb c локального компьютера
-# в директорию /app.
-COPY api_yamdb/ /app
+ARG DEBIAN_FRONTEND=noninteractive
+ARG DEBCONF_NOWARNINGS="yes"
 
 # Сделать директорию /app рабочей директорией.
 WORKDIR /app
