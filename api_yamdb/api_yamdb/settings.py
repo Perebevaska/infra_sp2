@@ -2,11 +2,12 @@ import os
 
 from datetime import timedelta
 from dotenv import load_dotenv
+from django.conf.global_settings import DATETIME_INPUT_FORMATS
 from pathlib import Path
 
 load_dotenv()
 
-from django.conf.global_settings import DATETIME_INPUT_FORMATS
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
